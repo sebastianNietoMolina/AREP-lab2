@@ -2,17 +2,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.escuelaing.arep.app</groupId>
-  <artifactId>AREP-lab2</artifactId>
+  <artifactId>SparkWebApp</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>SparkWebApp</name>
-  <url>http://maven.apache.org</url>
-  
+
    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,9 +25,14 @@
       <artifactId>spark-core</artifactId>
       <version>2.9.3</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>axios</artifactId>
+      <version>0.19.2</version>
+    </dependency>
   </dependencies>
 
-  <!-- build configuration -->
   <build>
     <plugins>
       <plugin>
