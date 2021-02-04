@@ -26,11 +26,6 @@
       <version>2.9.3</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.webjars.npm</groupId>
-      <artifactId>axios</artifactId>
-      <version>0.19.2</version>
-    </dependency>
   </dependencies>
 
   <build>
