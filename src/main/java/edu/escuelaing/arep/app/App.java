@@ -1,7 +1,6 @@
 package edu.escuelaing.arep.app;
 
 import spark.Request;
-import spark.Response;
 
 import java.util.List;
 
@@ -13,11 +12,15 @@ import static spark.Spark.*;
  */
 public class App{
 
+    /**
+     *El metodo mean permite iniciar el programa cuando este es ejecutado.
+     * @param args
+     */
     public static void main(String[] args) {
         staticFileLocation("/static");
         port(getPort());
-        post("/mean",(req, res) -> calculateMean(req, res) );
-        post("/standardDeviation",(req, res) -> calculateStd(req, res) );
+        post("/mean",(req, res) -> calculateMean(req) );
+        post("/standardDeviation",(req, res) -> calculateStd(req) );
     }
 
     static int getPort() {
@@ -27,7 +30,12 @@ public class App{
         return 4567; //returns default port if heroku-port isn't set
     }
 
-    static String calculateMean(Request req, Response res){
+    /**
+     * Cuando spark hace un post pide calcular la media.
+     * @param req contiene la petición que había echo desde la página web
+     * @return Un string que contiene la media.
+     */
+    static String calculateMean(Request req){
         String chain = req.body().substring(1,req.body().length()-1);
         String[] datos = chain.split(",");
         List lis = new LinkedList();
@@ -41,7 +49,12 @@ public class App{
         return ans.toString();
     }
 
-    static String calculateStd(Request req, Response res){
+    /**
+     * Cuando spark hace un post pide calcular la desviación estándar.
+     * @param req contiene la petición que había echo desde la página web
+     * @return Un string que contiene la desviación estándar.
+     */
+    static String calculateStd(Request req){
         String chain = req.body().substring(1,req.body().length()-1);
         String[] datos = chain.split(",");
         List lis = new LinkedList();
