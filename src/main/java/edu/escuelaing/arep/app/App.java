@@ -1,6 +1,7 @@
 package edu.escuelaing.arep.app;
 
 import spark.Request;
+import spark.Response;
 
 import java.util.List;
 
@@ -19,8 +20,8 @@ public class App{
     public static void main(String[] args) {
         staticFileLocation("/static");
         port(getPort());
-        post("/mean",(req, res) -> calculateMean(req) );
-        post("/standardDeviation",(req, res) -> calculateStd(req) );
+        post("/mean",(req, res) -> calculateMean(req, res) );
+        post("/standardDeviation",(req, res) -> calculateStd(req, res) );
     }
 
     static int getPort() {
@@ -35,7 +36,7 @@ public class App{
      * @param req contiene la petición que había echo desde la página web
      * @return Un string que contiene la media.
      */
-    static String calculateMean(Request req){
+    static String calculateMean(Request req, Response res){
         String chain = req.body().substring(1,req.body().length()-1);
         String[] datos = chain.split(",");
         List lis = new LinkedList();
@@ -54,7 +55,7 @@ public class App{
      * @param req contiene la petición que había echo desde la página web
      * @return Un string que contiene la desviación estándar.
      */
-    static String calculateStd(Request req){
+    static String calculateStd(Request req, Response res){
         String chain = req.body().substring(1,req.body().length()-1);
         String[] datos = chain.split(",");
         List lis = new LinkedList();
