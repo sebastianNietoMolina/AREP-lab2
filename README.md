@@ -1,6 +1,13 @@
+## _Despliegue en Heroku_ 
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://evening-shelf-74618.herokuapp.com/)
+ ## _Integración continua_ 
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/sebastianNietoMolina/AREP-lab2)
+
 # INTRODUCTION TO COMPLEX SYSTEMS, JAVA, MVN, AND GIT
 
-Este proyecto busca implementar la media y la desviación estándar haciendo uso de LinkedList, en particular esta debe ser creada por nosotros, y debe ser compatible con la interface List, además, hacemos uso del micro-framework Spark y de la herramienta heroku para poder desplegar nuestra pagina web. Para ello hacemos uso de estructura de datos para manejar los nodos correctamente y poder implementar la lista. [Aquí](Design.pdf) puede encontrar el informe con mayor detalle. 
+Este proyecto busca implementar la media y la desviación estándar haciendo uso de LinkedList, en particular esta debe ser creada por nosotros, y debe ser compatible con la interface List, además, hacemos uso del micro-framework Spark y de la herramienta heroku para poder desplegar nuestra pagina web. Para ello hacemos uso de estructura de datos para manejar los nodos correctamente y poder implementar la lista. [Aquí](Desing.pdf) puede encontrar el informe con mayor detalle. 
+
+NOTA: Al principio debe dar clic 2 veces en el botón get value para que le aparezca el valor correspondiente, no debe dar muchos clic seguidos rápidamente, esto hará que el programa no funcione apropiadamente, procure que haya termino de calcular para dar clic otra vez.
 
 ## Comenzando 🚀
 
@@ -41,6 +48,39 @@ Tambien me gustaria aclarar que puedes descargar el javaDoc, este quedara guarda
 mvn javadoc:javadoc
 ```
 
+Si desea correr heroku localmente, hay un archivo que se llama Procfile, si su sistema operativo es Linux, use el siguiente comando.
+
+```
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* edu.escuelaing.arep.app.App
+```
+
+Si falla agrega lo siguiente
+
+```
+web: java $JAVA_OPTS -cp "target/classes:target/dependency/*" edu.escuelaing.arep.app.App
+```
+Si usa windows use el siguiente comando.
+
+```
+web: java -cp target/classes;target/dependency/* edu.escuelaing.arep.app.App
+```
+
+Recuerde que para ver heroku localmente debe ingresar el siguiente comando en cmd 
+
+```
+heroku local web
+```
+Posteriormente debe escribir el siguiente link en su buscador: localhost:5000
+
+![](https://github.com/sebastianNietoMolina/AREP-lab2/blob/main/fotos/herokuLocal.PNG)
+
+Si por el contrario solo ejecuto el programa desde el main, o por comando, debe escribir el siguiente link en su buscador: localhost:4567
+
+Acá dejo una lista de como puede ingresar los datos para poder sacar la media o deviación estándar.
+```
+160,591,114,229,230,270,128,1657,624,1503
+```
+
 ## Ejecutando las pruebas ⚙️
 
 El anterior comando mvn package ya ejecuta las pruebas, pero si desea verlas por aparte puede ejecutar el siguiente comando.
@@ -53,7 +93,7 @@ mvn test.
 
 Se puede evidenciar cuando pasan las pruebas, no se deben ejecutar varias al mismo tiempo, puede ocasionar que no pase, pero de forma secuencial lo lograra.
 
-![](https://github.com/sebastianNietoMolina/AREP-lab1/blob/main/fotos-documentos/pruebas.PNG)
+![](https://github.com/sebastianNietoMolina/AREP-lab2/blob/main/fotos/prueba.PNG)
 
 ## Autores ✒️
 
