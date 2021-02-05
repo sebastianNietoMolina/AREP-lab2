@@ -7,7 +7,7 @@
 
 Este proyecto busca implementar la media y la desviación estándar haciendo uso de LinkedList, en particular esta debe ser creada por nosotros, y debe ser compatible con la interface List, además, hacemos uso del micro-framework Spark y de la herramienta heroku para poder desplegar nuestra pagina web. Para ello hacemos uso de estructura de datos para manejar los nodos correctamente y poder implementar la lista. [Aquí](Desing.pdf) puede encontrar el informe con mayor detalle. 
 
-NOTA: Al principio debe dar clic 2 veces en el botón get value para que le aparezca el valor correspondiente, no debe dar muchos clic seguidos rápidamente, esto hará que el programa no funcione apropiadamente, procure que haya termino de calcular para dar clic otra vez.
+NOTA: Al dar clic sobre el botón get value debe hacerlo 2 o 3 veces para que le aparezca el valor correspondiente, si lo hace demasio rapido puede que el programa no funcione apropiadamente.
 
 ## Comenzando 🚀
 
